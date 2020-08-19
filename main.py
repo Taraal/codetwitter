@@ -38,3 +38,12 @@ for tweet in json.loads(response.text):
         for index, medium in enumerate(medias):
             print("Photo " + str(index) + " : " + medium['media_url'])
     print("-------------------------------------------")
+
+class Test:
+
+    def __init__(self):
+        self.Id = "1234"
+
+
+test = Test()
+print(vars(test))
