@@ -8,8 +8,8 @@
     {% if timeline %}
     <ul>
     {% for tweet in timeline %}
-        <div style="display:inline;"><div style="display:inline;" class="def">def </div>{{ tweet.User }}(<div style="display:inline;" class="attribute">full_name</div>={{ tweet.Name }}):</div>
-            <div class="function">
+        <div style="display:inline;"><div style="display:inline;color:orange;" class="def">def </div>{{ tweet.User }}(<div style="display:inline;color:red;" class="attribute">full_name</div>={{ tweet.Name }}):</div>
+            <div style="color:green;" class="function">
             <br>
             ###
             <br>
@@ -25,12 +25,12 @@
         medias = [
         <br>
             {% for media in tweet.Medias %}
-                <div style="margin-left:40px;">{{ media }}</div>
+                <div style="margin-left:40px;color:lime;">"{{ media }}"</div>
         <br>
             {% endfor %}
         ]
         </div>
-        <br><br><br>
+        <br><br>
     {% endfor %}
     </ul>
     {% else %}
