@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeTwitter</title>
+</head>
+<body>
+    {% if timeline %}
+    <ul>
+    {% for tweet in timeline %}
+        <div style="display:inline;"><div style="display:inline;" class="def">def </div>{{ tweet.User }}(<div style="display:inline;" class="attribute">full_name</div>={{ tweet.Name }}):</div>
+            <div class="function">
+            <br>
+            ###
+            <br>
+            {{ tweet.Text }}
+            <br>
+            ###
+        <br><br>
+
+        likes = {{ tweet.Likes }}
+        <br>
+        retweets = {{ tweet.Retweets }}
+        <br>
+        medias = [
+        <br>
+            {% for media in tweet.Medias %}
+                <div style="margin-left:40px;">{{ media }}</div>
+        <br>
+            {% endfor %}
+        ]
+        </div>
+        <br><br><br>
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>No tweets are available.</p>
+    {% endif %}
+</body>
+</html>
