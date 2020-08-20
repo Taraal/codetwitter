@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>CodeTwitter</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'tweets/style.css' %}">
 </head>
 <body>
     {% if timeline %}
     <ul>
     {% for tweet in timeline %}
         <div style="display:inline;"><div style="display:inline;color:orange;" class="def">def </div>{{ tweet.User }}(<div style="display:inline;color:red;" class="attribute">full_name</div>={{ tweet.Name }}):</div>
-            <div style="color:green;" class="function">
+            <div class="function">
             <br>
+            <div style="color:green;">
             ###
             <br>
             {{ tweet.Text }}
             <br>
             ###
+            </div>
         <br><br>
 
         likes = {{ tweet.Likes }}
@@ -25,7 +30,13 @@
         medias = [
         <br>
             {% for media in tweet.Medias %}
-                <div style="margin-left:40px;color:lime;">"{{ media }}"</div>
+                <div class="media">
+                    <a class="image">"{{ media }}"
+                    <div class="media-front">
+                        <img src={{media}} />
+                    </div>
+                    </a>
+                </div>
         <br>
             {% endfor %}
         ]

@@ -21,6 +21,8 @@ def get_timeline():
     payload = {"tweet_mode": "extended"}
     response = requests.get(url, auth=auth, params=payload)
 
+    if response.status_code != 200:
+        return
     tweets = []
     for tweet in json.loads(response.text):
         tweet_dict = {
