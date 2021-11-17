@@ -15,27 +15,27 @@
             <div class="function">
             <br>
             <div style="color:green;">
-            ###
+            &emsp;###
             <br>
-            {{ tweet.Text }}
+            &emsp;{{ tweet.Text }}
             <br>
-            ###
+            &emsp;###
             </div>
         <br><br>
 
-        likes = {{ tweet.Likes }}
+            &emsp;likes = {{ tweet.Likes }}
         <br>
-        retweets = {{ tweet.Retweets }}
+            &emsp;retweets = {{ tweet.Retweets }}
         <br>
-        medias = [
+            &emsp;medias = [
         <br>
             {% for media in tweet.Medias %}
                 <div class="media">
-                    <a class="image">"{{ media }}"
+                    <a class="image">"{{ media }}" </a>
                     <div class="media-front">
                         <img src={{media}} />
                     </div>
-                    </a>
+
                 </div>
         <br>
             {% endfor %}
